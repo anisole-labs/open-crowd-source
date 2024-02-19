@@ -4,7 +4,7 @@ import Script from "next/script";
 
 import { Analytics } from "@repo/ui/components/analytics";
 import { AuthProvider } from "@repo/ui/components/auth-provider";
-import { SiteFooter, SiteFooterProps } from "@repo/ui/components/site-footer";
+import { SiteFooter } from "@repo/ui/components/site-footer";
 import { SiteHeader } from "@repo/ui/components/site-header/index";
 import { TailwindIndicator } from "@repo/ui/components/tailwind-indicator";
 import { ThemeProvider } from "@repo/ui/components/theme-provider";
@@ -32,22 +32,6 @@ interface RootLayoutProps {
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   const session = await getServerAuthSession();
-  const footerPages: SiteFooterProps = {
-    pages: [
-      {
-        title: "Privacy Policy",
-        url: "/privacy-policy",
-      },
-      {
-        title: "Terms of Service",
-        url: "/terms-of-service",
-      },
-      {
-        title: "Refund Policy",
-        url: "/refund-policy",
-      },
-    ],
-  };
 
   return (
     <>
@@ -72,7 +56,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             <AuthProvider session={session ? session : undefined}>
               <SiteHeader siteName={siteConfig.name} />
               <div className="container min-h-screen-app">{children}</div>
-              <SiteFooter {...footerPages} />
+              <SiteFooter {...siteConfig.footerSection} />
               <TailwindIndicator />
             </AuthProvider>
           </ThemeProvider>

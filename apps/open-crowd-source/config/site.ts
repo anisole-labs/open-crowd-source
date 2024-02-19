@@ -5,6 +5,7 @@ import { HeroSectionProps } from "@repo/ui/components/hero-section";
 import { LandingBackUsUpProps } from "@repo/ui/components/landing-back-us-up";
 import { LandingFeatureProps } from "@repo/ui/components/landing-page-feature";
 import { LegalPageProps } from "@repo/ui/components/legal-page";
+import { SiteFooterProps } from "@repo/ui/components/site-footer";
 
 type TsiteConfig = {
   // general info
@@ -24,6 +25,9 @@ type TsiteConfig = {
   privacyPolicy: LegalPageProps;
   termsOfService: LegalPageProps;
   refundPolicy: LegalPageProps;
+
+  // footer
+  footerSection: SiteFooterProps;
 } & GetCrowdsourceHandlerProps;
 
 export const siteConfig: TsiteConfig = {
@@ -213,6 +217,27 @@ export const siteConfig: TsiteConfig = {
         title: "Changes to Terms",
         content:
           "We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.",
+      },
+    ],
+  },
+  footerSection: {
+    creators: ["Rahul Singh", "Suyash Goylit"],
+    creatorSocials: [
+      "https://twitter.com/rahool_lol",
+      "https://twitter.com/GoylitSuyash",
+    ],
+    pages: [
+      {
+        title: "Privacy Policy",
+        url: "/privacy-policy",
+      },
+      {
+        title: "Terms of Service",
+        url: "/terms-of-service",
+      },
+      {
+        title: "Refund Policy",
+        url: "/refund-policy",
       },
     ],
   },

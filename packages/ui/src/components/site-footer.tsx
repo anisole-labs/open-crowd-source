@@ -6,6 +6,8 @@ type Page = {
 };
 
 export type SiteFooterProps = {
+  creators: string[];
+  creatorSocials: string[];
   pages?: Page[];
 };
 
@@ -33,23 +35,20 @@ export function SiteFooter(props: SiteFooterProps) {
       <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
           Made with ❤️ by{" "}
-          <a
-            href="https://twitter.com/rahool_lol"
-            target="_blank"
-            rel="noreferrer"
-            className="font-medium underline underline-offset-4"
-          >
-            Rahul Singh
-          </a>
-          &nbsp;and&nbsp;
-          <a
-            href="https://twitter.com/GoylitSuyash"
-            target="_blank"
-            rel="noreferrer"
-            className="font-medium underline underline-offset-4"
-          >
-            Suyash Goylit
-          </a>
+          {props.creators?.map((creator, index) => (
+            <span key={index}>
+              <a
+                href={props.creatorSocials[index]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:underline"
+              >
+                {creator}
+              </a>
+              {index < props.creators.length - 2 ? ", " : ""}
+              {index === props.creators.length - 2 ? " and " : ""}
+            </span>
+          ))}
         </p>
         <GetPages />
       </div>

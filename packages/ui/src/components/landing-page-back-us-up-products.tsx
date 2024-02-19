@@ -22,6 +22,7 @@ export type ProductCardsProps = {
   content: string;
   buttonLink: string;
   buttonText: string;
+  requestBody: any;
   disabled?: boolean;
 };
 
@@ -99,6 +100,7 @@ export const ProductCard = (props: ProductCardsProps) => {
     const urlButtonProps: UrlButtonProps = {
       url: props.buttonLink,
       method: "POST",
+      body: props.requestBody,
       onSuccess: onSuccess,
       disabled: props.disabled,
     };

@@ -104,6 +104,9 @@ export const siteConfig: TsiteConfig = {
           "Become an early adopter and lock-in a lifetime discounted annual subscription rate of just $ 5.99. Can't back us up right now? No worries - join us for an entire year of premium features after the launch at $ 11.99.",
         buttonLink: "/api/subscribe",
         buttonText: "Become a Founding Member",
+        requestBody: {
+          productId: "early-bird",
+        },
       },
       {
         title: "Get notified at launch",
@@ -112,6 +115,7 @@ export const siteConfig: TsiteConfig = {
           "Sign up for updates and we'll let you know when we're live. No spam, just a single email when we're ready to roll out.",
         buttonLink: "/api/waitlist",
         buttonText: "Get Notified",
+        requestBody: {},
       },
     ],
   },

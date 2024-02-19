@@ -77,6 +77,7 @@ export const LandingBackUsUp = (props: LandingBackUsUpProps) => {
                   content={product.content}
                   buttonLink={product.buttonLink}
                   buttonText={product.buttonText}
+                  requestBody={product.requestBody}
                 />
               </CarouselItem>
             );

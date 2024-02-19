@@ -27,7 +27,7 @@ importers:
         specifier: latest
         version: 1.11.3
 
-  apps/gym-notes:
+  apps/open-crowd-source:
     dependencies:
       '@mdx-js/loader':
         specifier: ^3.0.0
@@ -50,9 +50,6 @@ importers:
       '@repo/next-utils':
         specifier: workspace:*
         version: link:../../packages/next-utils
-      '@repo/react-imager':
-        specifier: workspace:*
-        version: link:../../packages/react-imager
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -90,98 +87,6 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
-      '@types/eslint':
-        specifier: ^8.56.1
-        version: 8.56.2
-      '@types/node':
-        specifier: ^20.10.6
-        version: 20.11.6
-      '@types/react':
-        specifier: ^18.2.46
-        version: 18.2.48
-      '@types/react-dom':
-        specifier: ^18.2.18
-        version: 18.2.18
-      autoprefixer:
-        specifier: ^10.4.17
-        version: 10.4.17(postcss@8.4.33)
-      eslint:
-        specifier: ^8.56.0
-        version: 8.56.0
-      postcss:
-        specifier: ^8.4.33
-        version: 8.4.33
-      tailwindcss:
-        specifier: ^3.4.1
-        version: 3.4.1
-      typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
-
-  apps/reading-wrap-up:
-    dependencies:
-      '@mdx-js/loader':
-        specifier: ^3.0.0
-        version: 3.0.0(webpack@5.90.1)
-      '@next-auth/prisma-adapter':
-        specifier: ^1.0.7
-        version: 1.0.7(@prisma/client@5.9.1)(next-auth@4.24.5)
-      '@next/mdx':
-        specifier: ^14.1.0
-        version: 14.1.0(@mdx-js/loader@3.0.0)
-      '@tanstack/react-table':
-        specifier: ^8.11.8
-        version: 8.11.8(react-dom@18.2.0)(react@18.2.0)
-      axios:
-        specifier: ^1.6.7
-        version: 1.6.7
-      next:
-        specifier: ^14.0.4
-        version: 14.1.0(react-dom@18.2.0)(react@18.2.0)
-      next-auth:
-        specifier: ^4.24.5
-        version: 4.24.5(next@14.1.0)(react-dom@18.2.0)(react@18.2.0)
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-icons:
-        specifier: ^5.0.1
-        version: 5.0.1(react@18.2.0)
-      recharts:
-        specifier: ^2.12.0
-        version: 2.12.0(react-dom@18.2.0)(react@18.2.0)
-    optionalDependencies:
-      '@repo/api':
-        specifier: workspace:*
-        version: link:../../packages/api
-      '@repo/database':
-        specifier: workspace:*
-        version: link:../../packages/database
-      '@repo/email':
-        specifier: workspace:*
-        version: link:../../packages/email
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@repo/next-utils':
-        specifier: workspace:*
-        version: link:../../packages/next-utils
-      '@repo/react-imager':
-        specifier: workspace:*
-        version: link:../../packages/react-imager
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
-      '@repo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-    devDependencies:
-      '@next/eslint-plugin-next':
-        specifier: ^14.0.4
-        version: 14.1.0
       '@types/eslint':
         specifier: ^8.56.1
         version: 8.56.2
@@ -224,6 +129,9 @@ importers:
       razorpay:
         specifier: ^2.9.2
         version: 2.9.2
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
     devDependencies:
       '@types/node':
         specifier: ^20.11.16
@@ -303,12 +211,6 @@ importers:
       '@types/node':
         specifier: ^20.11.16
         version: 20.11.16
-
-  packages/react-imager:
-    dependencies:
-      html2canvas:
-        specifier: ^1.4.1
-        version: 1.4.1
 
   packages/typescript-config: {}
 
@@ -2742,11 +2644,6 @@ packages:
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  /base64-arraybuffer@1.0.2:
-    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
-    engines: {node: '>= 0.6.0'}
-    dev: false
-
   /bcrypt-pbkdf@1.0.2:
     resolution: {integrity: sha512-qeFIXtP4MSoi6NLqO12WfqARWWuCKi2Rn/9hJLEmtB5yTNr9DqFWkJRCf2qShWzPeAMRnOgCrq0sg/KLv5ES9w==}
     dependencies:
@@ -2995,12 +2892,6 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-
-  /css-line-break@2.1.0:
-    resolution: {integrity: sha512-FHcKFCZcAha3LwfVBhCQbW2nCNbkZXn7KVUJcsT5/P8YmfsVja0FMPJr0B903j/E69HUphKiV9iQArX8SDYA4w==}
-    dependencies:
-      utrie: 1.0.2
-    dev: false
 
   /cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
@@ -4268,14 +4159,6 @@ packages:
   /hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
     dev: true
-
-  /html2canvas@1.4.1:
-    resolution: {integrity: sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      css-line-break: 2.1.0
-      text-segmentation: 1.0.3
-    dev: false
 
   /http-signature@1.2.0:
     resolution: {integrity: sha512-CAbnr6Rz4CYQkLYUtSNXxQPUH2gK8f3iWexVlsnMeD+GjlsQ0Xsy1cOX+mN3dtxYomRy21CiOzU8Uhw6OwncEQ==}
@@ -6661,12 +6544,6 @@ packages:
       source-map-support: 0.5.21
     dev: false
 
-  /text-segmentation@1.0.3:
-    resolution: {integrity: sha512-iOiPUo/BGnZ6+54OsWxZidGCsdU8YbE4PSpdPinp7DeMtUJNJBoJ/ouUSTJjHkh1KntHaltHl/gDs2FC4i5+Nw==}
-    dependencies:
-      utrie: 1.0.2
-    dev: false
-
   /text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
@@ -7028,12 +6905,6 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-
-  /utrie@1.0.2:
-    resolution: {integrity: sha512-1MLa5ouZiOmQzUbjbu9VmjLzn1QLXBhwpUa7kdLUQK+KQ5KA9I1vk5U4YHe/X2Ch7PYnJfWuWT+VbuxbGwljhw==}
-    dependencies:
-      base64-arraybuffer: 1.0.2
-    dev: false
 
   /uuid@3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}

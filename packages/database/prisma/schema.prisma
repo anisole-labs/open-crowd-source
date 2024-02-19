@@ -46,9 +46,6 @@ model User {
   emailVerified DateTime?
   image         String?
 
-  earlyBirdGymNotes Boolean? @default(false)
-  earlyBirdReadingWrapUp Boolean? @default(false)
-
   accounts  Account[]
   sessions  Session[]
   payments  Payment[]
@@ -62,6 +59,23 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+enum ProductStatus {
+  ENABLED
+  DISABLED
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  price       Float
+  status      ProductStatus @default(ENABLED)
+  created     DateTime @default(now())
+  updated     DateTime @updatedAt
+
+  payments    Payment[]
+}
+
 enum Status {
   PENDING
   SUCCESS
@@ -70,21 +84,19 @@ enum Status {
 model Payment {
   id          String   @id @default(uuid())
   userId      String
-  productName String
+  productId   String
   status      Status   @default(PENDING)
   created     DateTime @default(now())
   updated     DateTime @updatedAt
 
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product     Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
 model Waitlist {
   id          String   @id @default(uuid())
-  email       String   @unique
-
-  gymNotes    Boolean? @default(false)
-  readingWrapUp Boolean? @default(false)
-
+  email       String
+  releaseMailSent Boolean @default(false)
   created     DateTime @default(now())
   updated     DateTime @updatedAt
 }

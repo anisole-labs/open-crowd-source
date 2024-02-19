@@ -10,14 +10,14 @@ type TlegalPageContent = {
   content: string;
 };
 
-export type TlegalPageProps = {
+export type LegalPageProps = {
   title: string;
   description: string;
   legalContent: TlegalPageContent[];
   footer: string;
 };
 
-export const LegalPage = (props: TlegalPageProps) => {
+export const LegalPage = (props: LegalPageProps) => {
   return (
     <div
       className="

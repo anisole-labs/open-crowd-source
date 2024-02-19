@@ -13,7 +13,8 @@ import { Toaster as NewYorkToaster } from "@repo/ui/components/ui/toaster";
 import { fontSans } from "@repo/ui/lib/fonts";
 import { cn } from "@repo/ui/lib/utils";
 
-import { getServerAuthSession } from "@gym-notes/lib/auth";
+import { siteConfig } from "@open-crowd-source/config/site";
+import { getServerAuthSession } from "@open-crowd-source/lib/auth";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -22,28 +23,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export const metadata: Metadata = {
-  title: {
-    default: "Gym Notes",
-    template: `%s - Gym Notes`,
-  },
-  description: "Gym Notes is a note-taking app for gym-goers.",
-  keywords: ["gym", "workout", "fitness", "health"],
-  authors: [
-    {
-      name: "Rahul Singh",
-      url: "https://twitter.com/rahool_lol",
-    },
-    {
-      name: "Suyash Goylit",
-      url: "https://twitter.com/GoylitSuyash",
-    },
-  ],
-  creator: "anisolelabs",
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
+export const metadata: Metadata = siteConfig.metadata;
 
 interface RootLayoutProps {
   // eslint-disable-next-line no-undef
@@ -90,7 +70,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             disableTransitionOnChange
           >
             <AuthProvider session={session ? session : undefined}>
-              <SiteHeader siteName="Gym Notes" />
+              <SiteHeader siteName={siteConfig.name} />
               <div className="container min-h-screen-app">{children}</div>
               <SiteFooter {...footerPages} />
               <TailwindIndicator />

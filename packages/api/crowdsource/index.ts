@@ -3,8 +3,6 @@ import { NextResponse } from "next/server";
 import databaseClient from "@repo/database";
 import { NextRequest } from "@repo/next-utils";
 
-import { TproductNames, milestones, products } from "./utils";
-
 export type CrowdsourceResponseType = {
   numberOfBackers: number;
   amountBacked: number;
@@ -14,13 +12,22 @@ export type CrowdsourceResponseType = {
   };
 };
 
-export function getCrowdsourceHandler(productName: TproductNames) {
+export type GetCrowdsourceHandlerProps = {
+  milestone: {
+    amountGoal: number;
+    date: string;
+  };
+};
+
+export function getCrowdsourceHandler(props: GetCrowdsourceHandlerProps) {
   return async (req: NextRequest) => {
     // get all payment entries with productName
     const paymentEntries = await databaseClient.payment.findMany({
       where: {
-        productName,
         status: "SUCCESS",
+      },
+      include: {
+        product: true,
       },
     });
 
@@ -29,13 +36,13 @@ export function getCrowdsourceHandler(productName: TproductNames) {
 
     // get total amount of payments
     const amountBacked = paymentEntries.reduce((acc, payment) => {
-      return acc + products[productName].amount;
+      return acc + payment.product.price;
     }, 0);
 
     const responseJson: CrowdsourceResponseType = {
       numberOfBackers,
       amountBacked,
-      milestone: milestones[productName],
+      milestone: props.milestone,
     };
 
     return NextResponse.json(responseJson, {

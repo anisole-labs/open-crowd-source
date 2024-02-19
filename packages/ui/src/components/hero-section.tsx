@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { CrowdsourceResponseType } from "@repo/api/crowdsource";
+import { CrowdsourceResponseType } from "@repo/api";
 
 import { Button } from "@ui/components/ui/button";
 import { Progress } from "@ui/components/ui/progress";
@@ -47,7 +47,6 @@ export const HeroSection = (props: HeroSectionProps) => {
     <div
       className="
         min-h-screen-app 
-        md:h-screen-app 
         flex 
         flex-1 
         flex-col 

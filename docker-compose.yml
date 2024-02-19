@@ -5,10 +5,10 @@ services:
     image: postgres:14-alpine
     restart: always
     ports:
-      - 5432:5432
+      - 5433:5432
     volumes:
-      - ~/apps/anisole-postgres:/var/lib/postgresql/data
+      - ~/apps/open-crowd-source-postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=password
-      - POSTGRES_USER=rahools
-      - POSTGRES_DB=anisole
+      - POSTGRES_USER=opencrowdsource
+      - POSTGRES_DB=opencrowdsource

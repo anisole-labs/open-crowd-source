@@ -2,10 +2,9 @@ import { getWaitlistHandler, GetWaitlistHandlerProps } from "@repo/api";
 import { sendMailFromTemplate } from "@repo/email";
 import { withAuthentication } from "@repo/next-utils";
 
-import { getServerAuthSession } from "@gym-notes/lib/auth";
+import { getServerAuthSession } from "@open-crowd-source/lib/auth";
 
 const props: GetWaitlistHandlerProps = {
-  productName: "gym-notes",
   onSuccess: (req) => {
     sendMailFromTemplate({
       subject: "Welcome to the club!",

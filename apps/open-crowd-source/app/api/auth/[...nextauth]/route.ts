@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 
-import { nextAuthOptions } from "@gym-notes/lib/auth";
+import { nextAuthOptions } from "@open-crowd-source/lib/auth";
 
 const handler = NextAuth(nextAuthOptions);
 

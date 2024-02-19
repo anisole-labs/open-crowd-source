@@ -1,5 +1,5 @@
 {
-  "name": "gym-notes",
+  "name": "open-crowd-source",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -12,11 +12,10 @@
     "@mdx-js/loader": "^3.0.0",
     "@next-auth/prisma-adapter": "^1.0.7",
     "@next/mdx": "^14.1.0",
+    "@repo/api": "workspace:*",
     "@repo/database": "workspace:*",
     "@repo/email": "workspace:*",
     "@repo/next-utils": "workspace:*",
-    "@repo/api": "workspace:*",
-    "@repo/react-imager": "workspace:*",
     "@repo/ui": "workspace:*",
     "@tanstack/react-table": "^8.11.8",
     "axios": "^1.6.7",

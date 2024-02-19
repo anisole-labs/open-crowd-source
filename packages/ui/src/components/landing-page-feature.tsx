@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 
+import { Button } from "@ui/components/ui/button";
 import { TypographyH2, TypographyPBalance } from "@ui/components/ui/typography";
 import { cn } from "@ui/lib/utils";
 
@@ -14,6 +16,10 @@ export type LandingFeatureProps = {
   className?: string;
   imageHeight?: number;
   imageWidth?: number;
+  callToAction?: {
+    text: string;
+    href: string;
+  };
 };
 
 export const LandingFeature = (props: LandingFeatureProps) => {
@@ -50,6 +56,12 @@ export const LandingFeature = (props: LandingFeatureProps) => {
         <TypographyPBalance className="text-center">
           {props.description}
         </TypographyPBalance>
+
+        {props.callToAction && (
+          <Link className="mt-12" href={props.callToAction.href}>
+            <Button>{props.callToAction.text}</Button>
+          </Link>
+        )}
       </div>
 
       <div

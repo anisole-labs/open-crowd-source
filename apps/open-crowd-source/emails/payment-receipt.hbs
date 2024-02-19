@@ -1,0 +1,84 @@
+<html>
+  <style>
+    @import
+    url('https://fonts.googleapis.com/css2?family=Inter&family=Sacramento&display=swap');
+  </style>
+  <head>
+    <title style="font-family: 'Inter', sans-serif;">
+      Payment Receipt
+    </title>
+  </head>
+  <div>
+    <table align="center" style="text-align:center; background-color: #ffffff;">
+      <tr>
+        <td align="center" style="text-align:center">
+          <img
+            width="50%"
+            height="50%"
+            src="https://gymnotes.anisolelabs.com/images/gym-notes-twitter-header.png"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" style="text-align:left">
+          <div
+            style="
+              font-family: 'Inter', sans-serif;
+              font-size: 16px;
+              line-height: 1.5;
+              margin: 0 auto;
+              max-width: 600px;
+              padding: 20px;
+            "
+          >
+            <p>Hi {{customerName}},</p>
+            <p>
+              Thank you for subscribing to Gym Notes.
+            </p>
+
+            <p>
+              We are pleased to confirm that your recent recharge was
+              successful. Here are the transaction details for your reference:
+            </p>
+
+            <ul>
+              <li>Recharge Amount: {{payment.amount}}</li>
+              <li>Transaction ID: {{payment.id}}</li>
+              <li>Date: {{payment.updated}}</li>
+            </ul>
+
+            <p>
+              Should any discrepancies be identified, please reach out to our
+              customer service team at your earliest convenience. You can reach
+              us at
+              <a href="mailto:info@anisolelabs.com">info@anisolelabs.com</a>.
+            </p>
+            <p>Thank you for your continued patronage.</p>
+
+            <br />
+            <p>
+              Best Regards,
+              <br />
+              The Team at Gym Notes
+            </p>
+
+            <br />
+            <p>
+              <span
+                style="
+                  font-family: 'Inter', sans-serif;
+                  font-size: 12px;
+                  font-style: italic;
+                "
+              >
+                P.S. This is an automated email; replies to this email will not
+                be monitored or answered.
+              </span>
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</html>

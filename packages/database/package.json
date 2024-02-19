@@ -1,0 +1,19 @@
+{
+  "name": "@repo/database",
+  "version": "0.0.0",
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.6",
+    "prisma": "5.9.1"
+  },
+  "dependencies": {
+    "@prisma/client": "5.9.1"
+  },
+  "main": "./index.ts",
+  "types": "./index.ts"
+}

@@ -1,4 +1,8 @@
-const withMDX = require("@next/mdx")();
+const withMDX = require("@next/mdx")({
+  options: {
+    providerImportSource: "@mdx-js/react",
+  }
+});
 // const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
@@ -11,4 +15,6 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"]
 };
 
-module.exports = withMDX(nextConfig);
+module.exports = withMDX(nextConfig, {
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"]
+});

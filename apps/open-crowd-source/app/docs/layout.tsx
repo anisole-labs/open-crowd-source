@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 
-import { getDocsLayout } from "@ui/layouts/docs-layout";
+import { getDocsLayout } from "@repo/ui/layouts/docs-layout";
+import "@repo/ui/mdx.css";
 
 export const metadata: Metadata = {
   title: {

@@ -54,6 +54,7 @@
   },
   "exports": {
     "./globals.css": "./src/globals.css",
+    "./mdx.css": "./src/mdx.css",
     "./postcss.config": "./postcss.config.js",
     "./tailwind.config": "./tailwind.config.ts",
     "./themes.ts": "./src/themes.ts",

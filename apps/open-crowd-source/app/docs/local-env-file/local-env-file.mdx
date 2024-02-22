@@ -1,0 +1,83 @@
+# Configuring Local Environment File
+
+Envvironment file acts as a configuration file that contains sensitive information such as API keys, database credentials, etc. This file is not included in the repository for security reasons. However, a sample file is provided in the repository. To configure the environment file, follow the steps below:
+
+<Steps>
+
+### Creating Environment File
+
+Change your current directory to the root of the project and run the following command to create a new environment file:
+
+<CodeBlock
+  lang="bash"
+  code="cp apps/open-crowd-source/.env.local.example apps/open-crowd-source/.env"
+/>
+
+### Editing Environment File
+
+Open the environment file in a text editor and replace the values with your own. Here's a list of environment variables that you need to configure:
+
+#### `NEXT_PUBLIC_API_URL`
+
+This is the URL of the API server. Since we are configuring the local environment, you can set this to `http://localhost:3001`.
+
+#### `NEXTAUTH_SECRET`
+
+This is the secret key used by NextAuth to encrypt the session token. You can set this to any random string. To generate a random string, you can use the following command:
+
+<CodeBlock
+  lang="bash"
+  code="openssl rand -base64 32"
+/>
+
+#### `NEXTAUTH_GOOGLE_CLIENT_ID`
+
+This is the client ID of the Google OAuth application. You can get this from the Google Cloud Console.
+
+#### `NEXTAUTH_GOOGLE_CLIENT_SECRET`
+
+This is the client secret of the Google OAuth application. You can get this from the Google Cloud Console.
+
+#### `DATABASE_URL`
+
+This is the URL of the database. If you're using our `docker-compose` to run the database, you can set this to `postgresql://opencrowdsource:password@localhost:5433/opencrowdsource?schema=public`.
+
+#### `NODEMAILER_HOST`
+
+This is the SMTP server host. If you're using Mailtrap, you can set this to `sandbox.smtp.mailtrap.io` for local development.
+
+#### `NODEMAILER_PORT`
+
+This is the SMTP server port. If you're using Mailtrap, you can set this to `2525` for local development.
+
+#### `NODEMAILER_USER`
+
+This is the username of the SMTP server. If you're using Mailtrap, you can set this to the username provided by Mailtrap.
+
+#### `NODEMAILER_PASS`
+
+This is the password of the SMTP server. If you're using Mailtrap, you can set this to the password provided by Mailtrap.
+
+#### `NODEMAILER_EMAIL`
+
+This is the email address that will be used to send emails. You can set this to any verfied email address. For exmaple, we guys use: `no-reply@anisolelabs.com` for sending emails.
+
+#### `NODEMAILER_SEND_EMAILS`
+
+Since Mailtrap has a limit on the number of emails that can be sent, you can set this to `false` to disable sending emails. For now, we guys are using `true` to send emails.
+
+#### `RAZORPAY_ID`
+
+This is the ID of the Razorpay account. For development, you can get a test ID from the Razorpay dashboard.
+
+#### `RAZORPAY_SECRET`
+
+This is the secret key of the Razorpay account. For development, you can get a test secret key from the Razorpay dashboard.
+
+#### `RAZORPAY_WEBHOOK_SECRET`
+
+This is the webhook secret of the Razorpay account. Webhook secret is used to verify the authenticity of the webhook events. You can set this to any random string. 
+
+Note: You need to configure the webhook URL in the Razorpay dashboard to receive webhook events. Please refer to the [Testing RazorPay Locally](/docs/testing-razorpay-locally) for more information.
+
+</Steps>

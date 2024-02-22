@@ -1,0 +1,28 @@
+# Deploying to Vercel
+
+To deploy this project to Vercel, we recommend using [Vercel](https://vercel.com). You can deploy this project with the following steps:
+
+<Steps>
+
+### Prepairing Environment Variables
+
+Simmilar to the local `.env` file, you need to add the environment variables to the Vercel project too. Environment variables used for deployment are same as the local environment variables, but you need to update the values to the production values.
+
+Note: Please generate new `NEXTAUTH_SECRET` and `RAZORPAY_WEBHOOK_SECRET` values for the production environment.
+
+### Deploying to Vercel
+
+1. Upload the project to a git repository.
+2. Go to the [Vercel Dashboard](https://vercel.com/dashboard) and click on the "New Project" button.
+3. Select the repository you want to deploy from the list.
+4. Configure the project settings by adding the environment variables.
+5. Click on the "Deploy" button.
+
+### Setting up Razorpay Webhook
+
+1. Go to the [Razorpay Webhook Dashboard](https://dashboard.razorpay.com/app/webhooks) and create a new webhook.
+2. Set the webhook URL to `https://your-vercel-deployment-url/api/webhooks/razorpay`.
+3. Set the webhook secret to the value of `RAZORPAY_WEBHOOK_SECRET` environment variable.
+4. Tick the `order.paid` event.
+
+</Steps>

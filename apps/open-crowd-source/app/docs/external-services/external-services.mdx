@@ -1,0 +1,47 @@
+# External Services
+
+It's inefficient to write all the code for your application yourself. Instead, one should use external services to handle things like sending emails, storing data, and processing payments. This is a good thing, because it allows you to focus on the core functionality of your application.
+
+We'll be using a few external services in this course. Here are the ones we'll be using:
+
+<Steps>
+
+### Google Oauth (Authentication)
+
+Google OAuth is a service provided by Google that allows users to sign in to your application using their Google account. It's a great way to allow users to sign in without having to create a new account.
+
+Secrets required from Google:
+- Client ID
+- Client Secret
+
+### MailTrap (Email)
+
+MailTrap, at it's core, is a fake SMTP server for development teams to test, view and share emails sent from the development and staging environments without spamming real customers. Now, they also offer email sending services which could be used in production.
+
+Note: You can use any SMTP server for sending emails.
+
+Secrets required from MailTrap:
+- SMTP User
+- SMTP Password
+
+### Razorpay (Payments)
+
+Razorpay is a payments company that provides payment solutions to online merchants in India. It allows businesses to accept, process and disburse payments with its product suite. We'll be using it to process payments in our application.
+
+Secrets required from Razorpay:
+- API Key
+- API Secret
+- Webhook Secret
+
+### SupaBase (Database)
+
+Supabase provides user with a database, authentication, and storage solution. It's a great alternative to Firebase and is built on top of Postgres. We'll be using it to store data in our application.
+
+Secrets required from Supabase:
+- Postgres URL
+
+### Vercel (Hosting)
+
+Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It enables developers to host Jamstack websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.
+
+</Steps>

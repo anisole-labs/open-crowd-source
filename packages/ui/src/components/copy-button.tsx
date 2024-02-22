@@ -1,6 +1,7 @@
 "use client";
 
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
+import { track } from "@vercel/analytics";
 import * as React from "react";
 
 import { Button } from "@ui/components/ui/button";
@@ -40,6 +41,7 @@ export function CopyButton({
       onClick={() => {
         copyToClipboardWithMeta(value);
         setHasCopied(true);
+        track("CopyButton", { code: value });
       }}
       {...props}
     >

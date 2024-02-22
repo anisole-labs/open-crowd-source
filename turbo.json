@@ -54,8 +54,18 @@
       "cache": false,
       "persistent": true,
       "dependsOn": [
-        "^db:generate",
+        "^db:migrate:deploy",
         "^dev"
+      ]
+    },
+    "db:migrate:dev": {
+      "cache": false,
+      "dependsOn": [
+        "^db:generate",
+        "^db:migrate:dev"
+      ],
+      "env": [
+        "DATABASE_URL"
       ]
     }
   }

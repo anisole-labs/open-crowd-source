@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
+import { CodeBlock } from "@ui/components/code-block";
 import { CodeBlockWrapper } from "@ui/components/code-block-wrapper";
 import { CopyButton } from "@ui/components/copy-button";
 import {
@@ -182,6 +183,7 @@ export const mdxCustomComponents = {
       </>
     );
   },
+  CodeBlock,
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(

@@ -19,6 +19,40 @@ const DocsLayout = getDocsLayout({
           title: "Introduction",
           href: "/docs",
         },
+        {
+          title: "External Services",
+          href: "/docs/external-services",
+        },
+      ],
+    },
+    {
+      title: "Setup and Configuration",
+      childrenItems: [
+        {
+          title: "Development Environment",
+          href: "/docs/dev-env",
+        },
+        {
+          title: "Local Environment File",
+          href: "/docs/local-env-file",
+        },
+        {
+          title: "Customizing the Web Page",
+          href: "/docs/customizing-web-page",
+        },
+        {
+          title: "Running the App Locally",
+          href: "/docs/running-app-locally",
+        },
+      ],
+    },
+    {
+      title: "Deployment",
+      childrenItems: [
+        {
+          title: "Deploying to Vercel",
+          href: "/docs/deploying-to-vercel",
+        },
       ],
     },
   ],

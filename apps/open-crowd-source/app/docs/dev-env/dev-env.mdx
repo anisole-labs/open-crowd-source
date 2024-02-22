@@ -1,0 +1,66 @@
+# Setting Up Development Environment
+
+This guide will help you setup required tools and libraries to start customizing the project according to your needs. By the end of this guide, you will have a working development environment and you will be able to run the project on your local machine.
+
+Note: This guide is written for Linux users. Guides for other operating systems will be added soon.
+
+<Steps>
+
+### Installing Volta
+
+Volta is a tool manager for JavaScript. It allows you to install and manage different versions of Node.js and other JavaScript tools. You can install Volta by running the following command in your terminal:
+
+<CodeBlock
+  lang="bash"
+  code="curl https://get.volta.sh | bash"
+/>
+
+### Installing Node.js
+
+After installing Volta, you can install Node.js by running the following command in your terminal:
+
+<CodeBlock
+  lang="bash"
+  code="volta install node@18"
+/>
+
+### Installing pnpm
+
+pnpm is a fast, disk space efficient package manager for Node.js. You can install pnpm by running the following command in your terminal:
+
+<CodeBlock
+  lang="bash"
+  code="volta install pnpm"
+/>
+
+### Cloning the Project
+
+You can clone the project by running the following command in your terminal:
+
+<CodeBlock
+  lang="bash"
+  code="git clone git@github.com:anisole-labs/open-crowd-source.git && cd open-crowd-source"
+/>
+
+### Installing PostgreSQL
+
+PostgreSQL is a powerful, open source object-relational database system. We suggest you to install PostgreSQL using Docker. You can install Docker by following the instructions on the [official website](https://docs.docker.com/get-docker/). After installing Docker, you also need to install `docker-compose` by following the instructions on the [official website](https://docs.docker.com/compose/install/).
+
+After installing Docker and `docker-compose`, you can create a new PostgreSQL container by running the following command in your terminal:
+
+<CodeBlock
+  lang="bash"
+  code="docker-compose up -d"
+/>
+
+### Installing Project Dependencies
+
+After installing all the required tools, you can install the project dependencies by running the following command in your terminal:
+
+<CodeBlock
+  lang="bash"
+  code="pnpm install"
+/>
+
+</Steps>
+

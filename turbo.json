@@ -1,0 +1,72 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "pipeline": {
+    "db:generate": {
+      "cache": false,
+      "dependsOn": [
+        "^db:generate"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^db:generate",
+        "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ],
+      "env": [
+        "NODE_ENV",
+        "NEXTAUTH_GOOGLE_CLIENT_ID",
+        "NEXTAUTH_GOOGLE_CLIENT_SECRET",
+        "NODEMAILER_HOST",
+        "NODEMAILER_PORT",
+        "NODEMAILER_USER",
+        "NODEMAILER_PASS",
+        "NODEMAILER_EMAIL",
+        "NODEMAILER_SEND_EMAILS",
+        "RAZORPAY_ID",
+        "RAZORPAY_KEY",
+        "RAZORPAY_WEBHOOK_SECRET",
+        "CRON_SECRET"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ]
+    },
+    "db:migrate:deploy": {
+      "cache": false,
+      "dependsOn": [
+        "^db:generate",
+        "^db:migrate:deploy"
+      ],
+      "env": [
+        "DATABASE_URL"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": [
+        "^db:migrate:deploy",
+        "^dev"
+      ]
+    },
+    "db:migrate:dev": {
+      "cache": false,
+      "dependsOn": [
+        "^db:generate",
+        "^db:migrate:dev"
+      ],
+      "env": [
+        "DATABASE_URL"
+      ]
+    }
+  }
+}

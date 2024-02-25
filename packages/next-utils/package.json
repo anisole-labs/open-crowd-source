@@ -1,0 +1,17 @@
+{
+  "name": "@repo/next-utils",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "devDependencies": {
+    "@types/node": "^20.11.16"
+  },
+  "dependencies": {
+    "@repo/database": "workspace:*",
+    "@repo/email": "workspace:*",
+    "@sentry/nextjs": "^7.100.1",
+    "next": "^14.0.4",
+    "next-auth": "^4.24.5",
+    "zod": "^3.22.4"
+  }
+}

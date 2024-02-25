@@ -1,0 +1,16 @@
+{
+  "name": "@repo/api",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "devDependencies": {
+    "@types/node": "^20.11.16"
+  },
+  "dependencies": {
+    "@repo/database": "workspace:*",
+    "@repo/next-utils": "workspace:*",
+    "next": "^14.0.4",
+    "razorpay": "^2.9.2",
+    "zod": "^3.22.4"
+  }
+}
